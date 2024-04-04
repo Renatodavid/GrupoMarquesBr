@@ -48,6 +48,11 @@ body {
   transition: 0.5s;
 }
 
+.video:hover{
+  transform: scale(1.1);
+  transition: 1s;
+
+}
 .header.sticky {
   background: var(--bg-color);
   box-shadow: 0 0.1rem 1rem var(--shadow-color);
@@ -67,6 +72,14 @@ body {
   color: var(--white-color);
   font-weight: 500;
   margin-right: 3.5rem;
+}
+.col{
+  
+  margin-top: auto;
+  box-shadow: 0 0.2rem 0.5rem var(--shadow-color);
+  font-size: 2rem;
+  color: var(--main-color);
+  transition: 0.5s ease;
 }
 
 .header.sticky .navbar a {
