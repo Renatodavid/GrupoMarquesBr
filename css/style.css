@@ -60,7 +60,45 @@ body {
   cursor: default;
   margin-right: auto;
 }
+.videos-container {
+  display: flex;
+  flex-wrap: wrap;
+}
 
+.video-wrapper {
+  flex: 1 1 calc(20% - 20px); /* Calcula o tamanho de cada vídeo */
+  margin: 10px; /* Espaçamento entre os vídeos */
+}
+
+.video {
+  width: 100%;
+}
+
+.video-caption {
+  margin-top: 10px;
+  text-align: center;
+}
+
+
+
+
+
+
+
+.navbar a {
+  font-size: 1.7rem;
+  color: var(--white-color);
+  font-weight: 500;
+  margin-right: 3.5rem;
+  
+
+}
+.navbar a:hover,
+.navbar a.active {
+  color: var(--main-color);
+  
+  
+}
 .navbar a {
   position: relative;
   font-size: 1.7rem;
@@ -905,4 +943,24 @@ span {
     text-align: center;
     margin-top: 2rem;
   }
+}
+.videos-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 20px;
+}
+
+.video-wrapper {
+  width: 45%;
+  margin-bottom: 20px;
+}
+
+.video {
+  width: 100%;
+  height: auto;
+}
+
+.video-caption {
+  text-align: center;
 }

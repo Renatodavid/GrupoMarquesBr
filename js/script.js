@@ -79,3 +79,35 @@ ScrollReveal().reveal(".home-content h1, .about-img img", { origin: "left" });
 ScrollReveal().reveal(".home-content h3, .home-content p, .about-content", {
   origin: "right",
 });
+
+/*função para carregar videos*/
+
+window.onload = function() {
+  // Função para carregar os vídeos
+  function loadVideos() {
+      const videos = document.querySelectorAll('.video');
+      videos.forEach(video => {
+          video.load();
+      });
+  }
+
+  // Chamando a função para carregar os vídeos quando a página carregar
+  loadVideos();
+};
+ // Adicionando funcionalidade ao botão de play
+ const playButtons = document.querySelectorAll('.play-button');
+ playButtons.forEach(button => {
+     button.addEventListener('click', function() {
+         const video = this.parentElement.querySelector('.video');
+         if (video.paused) {
+             video.play();
+             this.textContent = 'Pause';
+         } else {
+             video.pause();
+             this.textContent = 'Play';
+         }
+     });
+ });
+
+ // Chamando a função para carregar os vídeos quando a página carregar
+ loadVideos();
