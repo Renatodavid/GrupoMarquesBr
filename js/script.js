@@ -80,7 +80,7 @@ ScrollReveal().reveal(".home-content h3, .home-content p, .about-content", {
   origin: "right",
 });
 
-/*função para carregar videos*/
+/*função para carregar videos
 
 window.onload = function() {
   // Função para carregar os vídeos
@@ -95,6 +95,7 @@ window.onload = function() {
   loadVideos();
 };
  // Adicionando funcionalidade ao botão de play
+ /*
  const playButtons = document.querySelectorAll('.play-button');
  playButtons.forEach(button => {
      button.addEventListener('click', function() {
@@ -110,4 +111,28 @@ window.onload = function() {
  });
 
  // Chamando a função para carregar os vídeos quando a página carregar
- loadVideos();
+ loadVideos();  */
+ window.onload = function() {
+  // Função para exibir o vídeo quando o botão é clicado
+  function showVideo(event) {
+      const button = event.target;
+      const videoSrc = button.getAttribute('data-src');
+      const videoWrapper = button.parentElement;
+
+      // Cria um elemento de vídeo e adiciona ao wrapper
+      const video = document.createElement('video');
+      video.src = videoSrc;
+      video.controls = true;
+      video.classList.add('video');
+      videoWrapper.appendChild(video);
+
+      // Remove o botão após exibir o vídeo
+      button.remove();
+  }
+
+  // Adiciona um ouvinte de evento para cada botão
+  const buttons = document.querySelectorAll('.play-button');
+  buttons.forEach(button => {
+      button.addEventListener('click', showVideo);
+  });
+};
